@@ -1,0 +1,28 @@
+{
+	"int" :
+	{
+		"gatherUnitsPerHour" : 16000,
+		"gatherMaxHours" : 24,
+		"gatherSameHoldHours" : 4,
+		"gatherUnrelatedHours" : 8,
+		"gatherUnknownHours" : 3,
+		"gatherDebug" : 0
+	},
+	"string" :
+	{
+		"noCompany" : "You find yourself without company on this trek.",
+		"noneToFollow" : "There are no party members to follow you.",
+		"noneToWait" : "There are no party members to wait for you.",
+		"noneToTrade" : "You have no party members to trade with.",
+		"noneToGather" : "You have no party members to gather.",
+		"enemiesNearby" : "You can not do this while enemies are nearby!",
+		"gathering" : "You spend sometime to gather your party.",
+		"companionsWounded" : "Your companions are in no state to travel.",
+		"hourPassed" : " hour has passed",
+		"hoursPassed" : " hours have passed",
+		"tooFar" : " is too far away to receive your commands!",
+		"tooWounded" : " is too wounded to rejoin you.",
+		"startWaiting" : " is waiting for you.",
+		"stopWaiting" : " stopped waiting."
+	}
+}
