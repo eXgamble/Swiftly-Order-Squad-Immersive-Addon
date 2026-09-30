@@ -93,7 +93,10 @@ MiscObject ABRKnockoutToken
 function refreshModForms()
 	; Optional mods: only look them up when loaded, so users without them get no log errors
 	ABRKnockoutToken = None
-	if IsPluginLoaded("ANDR_Bleedout_Revamp.esp")
+	if IsPluginLoaded("Death Timer - Immersive Bleedout.esp")
+		; Death Timer - Immersive Bleedout (reworked Bleedout Revamp) marks knocked-out and dying actors with the same token
+		ABRKnockoutToken = Game.GetFormFromFile(0x807, "Death Timer - Immersive Bleedout.esp") as MiscObject
+	elseIf IsPluginLoaded("ANDR_Bleedout_Revamp.esp")
 		; Andrealletius' Bleedout Revamp marks knocked-out actors with this token
 		ABRKnockoutToken = Game.GetFormFromFile(0x807, "ANDR_Bleedout_Revamp.esp") as MiscObject
 	endIf
@@ -467,7 +470,7 @@ bool function IsPluginLoaded(string fileName)
 	return Game.GetModByName(fileName) != 255 || Game.GetLightModByName(fileName) != 65535
 endFunction
 
-; Bleeding out, or knocked out by Bleedout Revamp (which swaps bleedout for paralysis + unconsciousness)
+; Bleeding out, or knocked out / dying under Death Timer or Bleedout Revamp (which swap bleedout for paralysis + unconsciousness)
 bool function IsDown(Actor akActor)
 	if akActor.IsBleedingOut()
 		return true
